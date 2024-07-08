@@ -28,14 +28,14 @@ class DummyDb {
 
   static const List<String> moviePostersListd2 = [
     "https://i.pinimg.com/236x/90/28/5c/90285cc77c28f48ab9a4fc82440daca2.jpg",
- "https://i.pinimg.com/236x/1e/f5/d4/1ef5d4898132fc72f5017b52585446af.jpg",
- "https://i.pinimg.com/236x/60/5b/a7/605ba727ebcf2e9d76ad101ae1b373af.jpg",
- "https://i.pinimg.com/236x/8e/9a/56/8e9a569ab0157eb076fed6e84651e86f.jpg",
- "https://i.pinimg.com/236x/d9/aa/6d/d9aa6d09cedea279ac0abbe786af2c62.jpg",
- "https://i.pinimg.com/474x/b5/58/76/b5587674a84bfbbcc23db91fa72b4711.jpg",
- "https://i.pinimg.com/474x/18/7e/1e/187e1e927d63d37440f8c0577e599f8f.jpg",
- "https://i.pinimg.com/236x/6b/86/08/6b860826fb0624c90684d0475cbe9757.jpg",
- "https://i.pinimg.com/474x/77/4b/73/774b73e179fdfeb1b1b91eb75de7a4d0.jpg",
- "https://i.pinimg.com/236x/26/c5/1e/26c51ece9ff9f8b87a7b9046aea815c4.jpg",
- ];
+    "https://i.pinimg.com/236x/1e/f5/d4/1ef5d4898132fc72f5017b52585446af.jpg",
+    "https://i.pinimg.com/236x/60/5b/a7/605ba727ebcf2e9d76ad101ae1b373af.jpg",
+    "https://i.pinimg.com/236x/8e/9a/56/8e9a569ab0157eb076fed6e84651e86f.jpg",
+    "https://i.pinimg.com/236x/d9/aa/6d/d9aa6d09cedea279ac0abbe786af2c62.jpg",
+    "https://i.pinimg.com/474x/b5/58/76/b5587674a84bfbbcc23db91fa72b4711.jpg",
+    "https://i.pinimg.com/474x/18/7e/1e/187e1e927d63d37440f8c0577e599f8f.jpg",
+    "https://i.pinimg.com/236x/6b/86/08/6b860826fb0624c90684d0475cbe9757.jpg",
+    "https://i.pinimg.com/474x/77/4b/73/774b73e179fdfeb1b1b91eb75de7a4d0.jpg",
+    "https://i.pinimg.com/236x/26/c5/1e/26c51ece9ff9f8b87a7b9046aea815c4.jpg",
+  ];
 }

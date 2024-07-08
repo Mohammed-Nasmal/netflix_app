@@ -20,18 +20,22 @@ class HomeScreen extends StatelessWidget {
             _buildPlaySection(),
             SizedBox(height: 40),
             MoviesCardBuilderWidget(
+              title: "Previews",
               customWidth: 102,
               isCircle: true,
               posterImages: DummyDb.moviePostersListd1,
             ),
             MoviesCardBuilderWidget(
               posterImages: DummyDb.moviePostersListd2,
+              title: "Continue Watching for Emenalo",
             ),
             MoviesCardBuilderWidget(
               posterImages: DummyDb.moviePostersListd1,
+              title: "Popular on Netflix",
             ),
             MoviesCardBuilderWidget(
               posterImages: DummyDb.moviePostersListd2,
+              title: "Trending Now",
               customHeight: 251,
               customWidth: 154,
             ),
@@ -87,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
-              )
+              ),
             ],
           ),
         ),
