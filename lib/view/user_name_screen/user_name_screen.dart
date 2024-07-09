@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix_app/dummy_db.dart';
 import 'package:netflix_app/utils/constants/color_constants.dart';
 import 'package:netflix_app/utils/constants/image_constants.dart';
-import 'package:netflix_app/view/home_screen/home_screen.dart';
+import 'package:netflix_app/view/bottom_nav_screen/bottom_nav_screen.dart';
 
 class UserNameScreen extends StatefulWidget {
   const UserNameScreen({super.key});
@@ -47,7 +47,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
+                        builder: (context) => BottomNavScreen(),
                       ));
                 },
                 child: Column(
@@ -73,12 +73,12 @@ class _UserNameScreenState extends State<UserNameScreen> {
               return InkWell(
                 onTap: () {
                   DummyDb.usersList.add(
-                    {"imagePath": ImageConstants.USER1_PNG, "name": "astdfygh"},
+                    {"imagePath": ImageConstants.USER1_PNG, "name": "Emenalo"},
                   );
                   setState(() {});
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       backgroundColor: ColorConstants.green,
-                      content: Text("Profile adde successfully")));
+                      content: Text("Profile added successfully")));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,

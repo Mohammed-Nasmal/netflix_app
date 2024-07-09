@@ -9,12 +9,14 @@ class MoviesCardBuilderWidget extends StatelessWidget {
     this.customWidth = 103,
     required this.title,
     required this.posterImages,
+    this.haveInfocard = true,
   });
   final bool isCircle; //  true for making items circular
   final double customHeight;
   final double customWidth;
   final String title;
   final List<String> posterImages;
+  final bool haveInfocard;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class MoviesCardBuilderWidget extends StatelessWidget {
         SizedBox(
           height: isCircle ? customWidth : customHeight,
           child: ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: 9),
             itemCount: posterImages.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => Padding(
@@ -49,6 +52,35 @@ class MoviesCardBuilderWidget extends StatelessWidget {
                 ),
                 height: customHeight,
                 width: customWidth,
+                child: Visibility(
+                  visible: haveInfocard,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 3,
+                        color: ColorConstants.grey,
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 7),
+                        color: ColorConstants.mainBlack,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              Icons.info_outline,
+                              color: ColorConstants.mainWhite,
+                            ),
+                            Icon(
+                              Icons.more_vert,
+                              color: ColorConstants.mainWhite,
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
             separatorBuilder: (context, index) => SizedBox(
