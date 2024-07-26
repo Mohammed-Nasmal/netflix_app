@@ -2,7 +2,7 @@ import 'package:netflix_app/utils/constants/image_constants.dart';
 
 class DummyDb {
   //UserNameScreen
-  static const usersList = [
+  static List<Map<String, String>> usersList = [
     {"imagePath": ImageConstants.USER1_PNG, "name": "Emenalo"},
     {"imagePath": ImageConstants.USER2_PNG, "name": "Onyeka"},
     {"imagePath": ImageConstants.USER3_PNG, "name": "Thelma"},
@@ -99,5 +99,10 @@ class DummyDb {
       "url": "assets/images/SEARCH7_PNG.png",
       "Name": "Your Excellency",
     }
+  ];
+  static const List<String> newArrivals = [
+    "https://i.pinimg.com/474x/b0/55/c3/b055c38a0ed853956e9dbe52bc8380cf.jpg",
+    "https://i.pinimg.com/236x/b0/ba/16/b0ba167cb8f8f812cd59c8476dfab7e8.jpg",
+    "https://i.pinimg.com/236x/26/c5/1e/26c51ece9ff9f8b87a7b9046aea815c4.jpg",
   ];
 }

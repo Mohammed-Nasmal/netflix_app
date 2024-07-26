@@ -3,6 +3,7 @@ import 'package:netflix_app/dummy_db.dart';
 import 'package:netflix_app/utils/constants/color_constants.dart';
 import 'package:netflix_app/utils/constants/image_constants.dart';
 import 'package:netflix_app/view/bottom_nav_screen/bottom_nav_screen.dart';
+import 'package:netflix_app/view/global_widgets/user_name_card.dart';
 
 class UserNameScreen extends StatefulWidget {
   const UserNameScreen({super.key});
@@ -21,7 +22,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
         centerTitle: true,
         title: Image.asset(
           height: 37.2,
-          ImageConstants.LOGO_PNG,
+          ImageConstants.nlogo_PNG,
         ),
         actions: [
           Icon(
@@ -42,43 +43,27 @@ class _UserNameScreenState extends State<UserNameScreen> {
               crossAxisCount: 2, crossAxisSpacing: 10, mainAxisExtent: 130),
           itemBuilder: (context, index) {
             if (index < DummyDb.usersList.length) {
-              return InkWell(
-                onTap: () {
+              return UserNameCard(
+                imagePath: DummyDb.usersList[index]["imagePath"].toString(),
+                userName: DummyDb.usersList[index]["name"].toString(),
+                onCardPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => BottomNavScreen(),
                       ));
                 },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset(
-                      DummyDb.usersList[index]["imagePath"].toString(),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      DummyDb.usersList[index]["name"].toString(),
-                      style: TextStyle(
-                        color: ColorConstants.mainWhite,
-                        fontSize: 13.25,
-                      ),
-                    )
-                  ],
-                ),
               );
             } else {
               return InkWell(
                 onTap: () {
                   DummyDb.usersList.add(
-                    {"imagePath": ImageConstants.USER1_PNG, "name": "Emenalo"},
+                    {"imagePath": ImageConstants.USER1_PNG, "name": "astdfygh"},
                   );
                   setState(() {});
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       backgroundColor: ColorConstants.green,
-                      content: Text("Profile added successfully")));
+                      content: Text("Profile adde successfully")));
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,

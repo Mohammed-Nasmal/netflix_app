@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/view/search_screen/search_screen.dart';
 import 'package:netflix_app/view/splash_screen/splash_screen.dart';
 
 void main() => runApp(MyApp());
