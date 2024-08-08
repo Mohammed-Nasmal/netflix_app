@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix_app/dummy_db.dart';
 import 'package:netflix_app/utils/constants/color_constants.dart';
@@ -132,21 +133,52 @@ class HomeScreen extends StatelessWidget {
   Widget _buildMoviePosterSection() {
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(ImageConstants.ranveer_PNG))),
-          height: 415,
+        CarouselSlider(
+          options: CarouselOptions(
+            height: 400.0,
+            aspectRatio: 16 / 9,
+            viewportFraction: 0.8,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            enlargeFactor: 0.3,
+            onPageChanged: (index, reason) {
+              print("Page changed to $index");
+            },
+            scrollDirection: Axis.horizontal,
+          ),
+          items: DummyDb.moviePostersListd1.map((posterUrl) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(posterUrl),
+                    ),
+                  ),
+                );
+              },
+            );
+          }).toList(),
         ),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 24),
           height: 415,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                  colors: [ColorConstants.mainBlack, Colors.transparent])),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.center,
+              colors: [ColorConstants.mainBlack, Colors.transparent],
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -159,17 +191,23 @@ class HomeScreen extends StatelessWidget {
                     Text(
                       "TV shows",
                       style: TextStyle(
-                          fontSize: 18, color: ColorConstants.mainWhite),
+                        fontSize: 18,
+                        color: ColorConstants.mainWhite,
+                      ),
                     ),
                     Text(
                       "Movies",
                       style: TextStyle(
-                          fontSize: 18, color: ColorConstants.mainWhite),
+                        fontSize: 18,
+                        color: ColorConstants.mainWhite,
+                      ),
                     ),
                     Text(
                       "My List",
                       style: TextStyle(
-                          fontSize: 18, color: ColorConstants.mainWhite),
+                        fontSize: 18,
+                        color: ColorConstants.mainWhite,
+                      ),
                     ),
                   ],
                 ),
@@ -184,15 +222,16 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     "#2 in Nigeria Today",
                     style: TextStyle(
-                        fontSize: 14,
-                        color: ColorConstants.mainWhite,
-                        fontWeight: FontWeight.bold),
+                      fontSize: 14,
+                      color: ColorConstants.mainWhite,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               )
             ],
           ),
-        )
+        ),
       ],
     );
   }
